@@ -41,6 +41,12 @@ public class StringCalculatorTest {
         String filePath = "src/test/resources/numbers_10000.txt";
         String numbers_10000 = Files.readString(Paths.get(filePath));
         assertEquals(898767, calculator.add(numbers_10000));
+
+        // Delimited huge test case
+        String filePath_d = "src/test/resources/numbers_10000_delimited.txt";
+        String numbers_10000_d = Files.readString(Paths.get(filePath_d));
+        assertEquals(898767, calculator.add(numbers_10000_d));
+
     }
     @Test
     @DisplayName("new line and comma separated delimiter test case - Step 3")
@@ -50,6 +56,14 @@ public class StringCalculatorTest {
         assertEquals(1010, calculator.add("10\n1000"));
     }
 
+    @Test
+    @DisplayName("supporting new delimiter - Step 4")
+    public void testAddCommaSeparatedNumbers_newDelimiter(){
+        assertEquals(6, calculator.add("//;\n1;5"));
+        assertEquals(10, calculator.add("//:\n1:2:3:4"));
+        assertEquals(1010, calculator.add("//>\n10>1000"));
+        assertEquals(3, calculator.add("//;\n1;2"));
+    }
 
 
 

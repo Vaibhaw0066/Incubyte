@@ -6,7 +6,15 @@ public class StringCalculator {
 
         int sum = 0;
         String delimiter =  "\n|,";
-        String []numberArrayStr = numbersStr.split(delimiter);
+        String []numberArrayStr = null;
+        if(numbersStr.length()>=2 && numbersStr.substring(0,2).equals("//")){
+            delimiter = numbersStr.substring(2,numbersStr.indexOf("\n"));
+            numberArrayStr = numbersStr.substring(numbersStr.indexOf("\n")+1,numbersStr.length()).split(delimiter);
+        }else{
+            numberArrayStr =  numbersStr.split(delimiter);
+        }
+
+
 
         for(int i=0;i<numberArrayStr.length;i++){
             sum += Integer.parseInt(numberArrayStr[i]);
