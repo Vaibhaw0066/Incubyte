@@ -38,13 +38,19 @@ public class StringCalculatorTest {
     @Test
     @DisplayName("Any length numbers - Step 2")
     public void testAddCommaSeparatedNumbers_HugeInput() throws IOException {
-
         String filePath = "src/test/resources/numbers_10000.txt";
         String numbers_10000 = Files.readString(Paths.get(filePath));
-
         assertEquals(898767, calculator.add(numbers_10000));
-
     }
+    @Test
+    @DisplayName("new line and comma separated delimiter test case - Step 3")
+    public void testAddCommaSeparatedNumbers_newLineDelimeter(){
+        assertEquals(6, calculator.add("1,5"));
+        assertEquals(10, calculator.add("1\n2,3\n4"));
+        assertEquals(1010, calculator.add("10\n1000"));
+    }
+
+
 
 
 }
