@@ -2,10 +2,11 @@ package com.rest.app;
 
 public class StringCalculator {
 
-    public int addCommseparatedNumber(String numbersStr){
+    public int addCommaSeparatedNumber(String numbersStr){
 
         int sum = 0;
         String []numberArrayStr = numbersStr.split(",");
+        System.out.print(numberArrayStr.length);
 
         for(int i=0;i<numberArrayStr.length;i++){
             sum += Integer.parseInt(numberArrayStr[i]);
@@ -17,7 +18,7 @@ public class StringCalculator {
         if(numberStr.length()==0) {
             return 0;
         }else{
-            return addCommseparatedNumber(numberStr);
+            return addCommaSeparatedNumber(numberStr);
         }
     }
 }
