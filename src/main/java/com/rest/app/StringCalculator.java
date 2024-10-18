@@ -14,10 +14,8 @@ public class StringCalculator {
     }
 
     public int add(String numberStr){
-        if(numberStr.length()==0){
+        if(numberStr.length()==0) {
             return 0;
-        }else if(numberStr.length()==1){
-            return numberStr.charAt(0)-'0'; // TODO : Support for "15" -> 15
         }else{
             return addCommseparatedNumber(numberStr);
         }

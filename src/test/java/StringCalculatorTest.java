@@ -10,7 +10,6 @@ public class StringCalculatorTest {
 
     StringCalculator calculator;
 
-
     @BeforeEach
     void setUp(){
         calculator = new StringCalculator();
@@ -25,10 +24,9 @@ public class StringCalculatorTest {
 
     @Test
     public void testAddCommseparatedNumber(){
-        assertEquals(15, calculator.add("10,5"));
+        assertEquals(6, calculator.add("1,5"));
         assertEquals(10, calculator.add("1,2,3,4"));
         assertEquals(1010, calculator.add("10,1000"));
-
     }
 
 
