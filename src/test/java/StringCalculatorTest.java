@@ -17,11 +17,19 @@ public class StringCalculatorTest {
     }
 
     @Test
-    public void testAdd_emptyString(){
+    public void testAdd_trivial(){
         assertEquals(0, calculator.add(""));
         assertEquals(1, calculator.add("1"));
-        assertEquals(15, calculator.add("15")); // Failed as of now
+        assertEquals(15, calculator.add("15"));
+    }
+
+    @Test
+    public void testAddCommseparatedNumber(){
+        assertEquals(15, calculator.add("10,5"));
+        assertEquals(10, calculator.add("1,2,3,4"));
+        assertEquals(1010, calculator.add("10,1000"));
 
     }
+
 
 }
